@@ -9977,4 +9977,15 @@ h6,
   margin:10px 0;
   padding-left:20vw;
 }
-
+#image{
+  padding:7% ;
+}
+.h1{
+  padding-bottom: 2%;
+}
+#p{
+  padding-bottom:2% ;
+}
+.container-fluid.position-relative.overlay-top.bg-dark.text-white-50.py-5{
+  margin-top: 100%;
+}
