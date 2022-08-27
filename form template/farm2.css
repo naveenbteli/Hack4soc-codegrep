@@ -1,6 +1,9 @@
 html, body {
     min-height: 100%;
   }
+  html{
+    background-image: url(this2.jpg);
+  }
   
   body {
     font-family: sans-serif;
@@ -168,13 +171,14 @@ input{
 }
 
 input[value="1"]{
-  border:0px;
+  border:#080340 solid 0px;
   width: 100%;
   height: 1.5em;
 
 }
 
 input[value="2"] {
+
   border: 0px;
   width: 100%;
   height: 2.5em;
@@ -212,7 +216,7 @@ html {
 .arrow-right:before {
   width: 60px;
   height: 2px;
-  background: #080340;
+  background: white;
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -222,7 +226,7 @@ html {
   display: inline-block !important;
   width: 0;
   height: 0;
-  border-left: 8px solid #080340;
+  border-left: 8px solid white;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   vertical-align: middle;
@@ -233,7 +237,7 @@ section{
   margin-left:31%;
   margin-top:5%;
   font-size: 1.5em;
-  color:#080340;
+  color:white;
   font-weight: 10px;
 }
 button[type=submit]{

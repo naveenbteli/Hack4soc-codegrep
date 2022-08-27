@@ -9989,3 +9989,7 @@ h6,
 .container-fluid.position-relative.overlay-top.bg-dark.text-white-50.py-5{
   margin-top: 100%;
 }
+.p12, ul{
+  line-height: 2em;
+  font-size:larger
+}
