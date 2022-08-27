@@ -154,6 +154,7 @@ html, body {
    font-family: 'Roboto' ;
    text-decoration:none ;
    color:white;
+   transition: color 0.25s, padding 0.25s;
   }
 
    .rb-spot:hover{
@@ -239,6 +240,21 @@ button[type=submit]{
   display:inline-block;
   margin-top:15%;
   margin-left: 38%;;
+}
+.span:hover{
+  color:white;
+  border-color: white;
+  padding-right:20px;
+  background-color:#080340 ;
+ 
+  padding-left:20px;
+
+}
+#c1{
+  padding:10px;
+  margin-bottom:10px;
+  font-size: 3em;
+  font-family: 'Poppins', sans-serif;
 }
 
 
