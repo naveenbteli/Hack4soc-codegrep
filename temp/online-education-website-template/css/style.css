@@ -9958,3 +9958,23 @@ h6,
 .testimonial-carousel .owl-nav .owl-prev:hover {
   background: #2878EB;
 }
+
+
+.edu-text{
+  padding: 0 10vw;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  
+}
+.edu-img{
+  display:flex;
+  flex-direction: column;
+  width:80%;
+  align-items: center;
+  margin:10px 0;
+}
+.edu-img img{
+  margin:10px 0;
+  padding-left:20vw;
+}
+
