@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Sign up Form</h2>
+    <div class="container" id="container">
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Sign in</h1>
+          <!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+
+          <input id="username" type="text" placeholder="Name" />
+          <input type="number" placeholder="class" />
+          <input type="text" placeholder="Board" />
+          <input type="text" placeholder="state" />
+          <input type="text" placeholder="Mobile" />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="current-password" type="password" placeholder="password" />
+
+          <button id="Signup">Sign Up</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <!-- <div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign Up</button>
+			</div> -->
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <!-- <button class="ghost" id="signUp">Sign Up</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        Created with by - Read how I created this and how you can join the
+        challenge here.
+      </p>
+    </footer>
+
+    <!-- -----------------------javascript code------------------------- -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAXxIy2lH0fr-7i_ipDtUykhjHPx0C3r74",
+        authDomain: "dreampath-b40a4.firebaseapp.com",
+        databaseURL: "https://dreampath-b40a4-default-rtdb.firebaseio.com",
+        projectId: "dreampath-b40a4",
+        storageBucket: "dreampath-b40a4.appspot.com",
+        messagingSenderId: "636569209463",
+        appId: "1:636569209463:web:584d761441e63752fbd472",
+        measurementId: "G-2KH4ZQTMDB",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const database = getDatabase(app);
+      const auth = getAuth();
+      alert("hii");
+
+      var signup = document.getElementById("Signup");
+      document
+        .getElementById("Signup")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+		function writeUserData(userId,username, email) {
+              const reference = ref(database, "users/" + userId);
+              set(reference, {
+                username:username,
+                email: email,
+              });
+            }
+		writeUserData("asdasfvfvdqwd","dafvfssdasd","ffdsfasfvfvdds");
+
+		
+      signup.addEventListener("click", (e) => {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("current-password").value;
+        var username = document.getElementById("username").value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+
+            var user = userCredential.user;
+            writeUserData(user.uid,username,email);
+            alert("user created " + user.uid + username + email);
+            location.replace("login.html");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+            // ..
+          });
+      });
+    </script>
+  </body>
+</html>
